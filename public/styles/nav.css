@@ -1,0 +1,29 @@
+
+
+span {     font-family: 'Bungee', cursive; }
+
+nav{
+  color: #ffff;
+  height: 120px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  background-color: #4056A1;
+  top: 0%;
+  width: 100%;
+  padding-top: 45px;
+  display: flex;
+  justify-content: space-between
+  
+}
+
+.fa-angle-double-down{
+width: 100%;
+display: flex;
+justify-content: center;
+padding-left: 80px;
+color: red;
+}
+

@@ -15,11 +15,26 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  font-family: Source-Sans-Pro;
+  color: #a19b8b;
+  background-color: #eceff4;
   font-size: 24px;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+   font-family: sans-serif;
+   color: black;
+   width: 90%;
+   margin: auto;
+   padding-left: 10px;
+   padding-right: 10px;
+   background-color: #a19b8b;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+  
+ }
