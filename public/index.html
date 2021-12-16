@@ -17,21 +17,26 @@
 
 
   <!-- App CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/feed.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 
+
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
@@ -58,7 +63,9 @@
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="/tweets" method="post">
+      
+      <form action="/tweets" method="post" id="tweet-form">
+      
         <!-- <label for="tweet-text">What are you humming about?</label> -->
        <div class= "tweet-box"><textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea></div>
         <div class= "character-count">
@@ -67,6 +74,16 @@
         </div>
       </form>
     </section>
+
+<section id="feed"> 
+  
+
+ 
+
+</section>
+
+
+
   </main>
 </body>
 
