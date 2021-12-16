@@ -85,7 +85,46 @@ $( document ).ready(function() {
    return $tweet;
   }
   
-  renderTweets(data)
+
+
+  $("#tweet-form").submit(function(event){
+    // prevents page from refreshing
+    event.preventDefault();
+    
+    // convert form data to a format the server understands
+   const data = $(this).serialize()
+
+  //  send data to the server using ajax
+  $.ajax({
+    url: '/tweets',
+    method: 'POST',
+    data: data,
+    success: function(data){
+      console.log("successfully sent tweet to server")
+
+    },
+    error: function(err){
+        console.log("failed to send tweet to server")
+    }
+  })
+  })
+  
+  function loadTweets(){
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      success: function(data){
+        console.log("data recieved from server",data);
+  
+      },
+      error: function(err){
+          console.log("failed to recieve data from server",err);
+      }
+    })
+  }
+  loadTweets()
+
+
   
   
 });
