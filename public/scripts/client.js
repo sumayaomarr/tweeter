@@ -6,8 +6,8 @@
 
 
 // A $( document ).ready() block.
-$( document ).ready(function() {
-  console.log( "ready!" );
+$(document).ready(function () {
+  console.log("ready!");
 
   const data = [
     {
@@ -34,7 +34,7 @@ $( document ).ready(function() {
       "created_at": 1461113959088
     }
   ]
-  
+
   const renderTweets = function (data) {
     // loops through tweets
     // calls createTweetElement for each tweet
@@ -45,18 +45,18 @@ $( document ).ready(function() {
       container.prepend($tweet)
     })
   }
-  
-  
-  
-  
-  
-  const createTweetElement = function (tweet) { 
-      let name = tweet.user.name
-      let avatars = tweet.user.avatars
-      let handle = tweet.user.handle
-      let content = tweet.content.text
-      let timestamp = timeago.format(tweet.created_at);
-  let $tweet = `
+
+
+
+
+
+  const createTweetElement = function (tweet) {
+    let name = tweet.user.name
+    let avatars = tweet.user.avatars
+    let handle = tweet.user.handle
+    let content = tweet.content.text
+    let timestamp = timeago.format(tweet.created_at);
+    let $tweet = `
   <article class="tweet">
   <header> 
       <img src=${avatars}></img>
@@ -82,51 +82,64 @@ $( document ).ready(function() {
   </footer>
   </article>
    `
-   return $tweet;
+    return $tweet;
   }
-  
 
+  // renderTweets(data)
 
-  $("#tweet-form").submit(function(event){
+  $("#tweet-form").submit(function (event) {
     // prevents page from refreshing
     event.preventDefault();
-    
+
+
     // convert form data to a format the server understands
-   const data = $(this).serialize()
+    const data = $(this).serialize()
 
-  //  send data to the server using ajax
-  $.ajax({
-    url: '/tweets',
-    method: 'POST',
-    data: data,
-    success: function(data){
-      console.log("successfully sent tweet to server")
 
-    },
-    error: function(err){
-        console.log("failed to send tweet to server")
+    if ($("#tweet-text").val().length > 140) {
+      $('.error-message').html('Character count is over the limit!');
+
+    } else if ($("#tweet-text").val().length === 0 || $("#tweet-text").val() === "") {
+      $('.error-message').html(' tweet field is empty!');
+    } else {
+
+
+      //  send data to the server using ajax
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data :  { text: $("#tweet-text").val()},
+        success: function (data) {
+          console.log("successfully sent tweet to server")
+          $('.error-message').html('');
+          $("#tweet-text").val('');
+          loadTweets();
+        },
+        error: function (err) {
+          console.log("failed to send tweet to server")
+        }
+      })
     }
-  })
-  })
-  
-  function loadTweets(){
+    })
+
+  function loadTweets() {
     $.ajax({
       url: '/tweets',
       method: 'GET',
-      success: function(data){
-        console.log("data recieved from server",data);
-  
+      success: function (data) {
+        console.log("data recieved from server", data);
+        renderTweets(data);
       },
-      error: function(err){
-          console.log("failed to recieve data from server",err);
+      error: function (err) {
+        console.log("failed to recieve data from server", err);
       }
     })
   }
   loadTweets()
 
 
-  
-  
+
+
 });
 
 
