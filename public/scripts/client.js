@@ -65,7 +65,7 @@ $(document).ready(function () {
   
   </header>
   
-  <p class="tweet-text">${content}</p>
+  <p class="tweet-text">${escape(content)}</p>
   
   
   <footer> 
@@ -86,7 +86,11 @@ $(document).ready(function () {
   }
 
   // renderTweets(data)
-
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
   $("#tweet-form").submit(function (event) {
     // prevents page from refreshing
     event.preventDefault();
