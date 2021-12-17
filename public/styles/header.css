@@ -1,7 +1,11 @@
 
 
+.name{
+  color: black;
+}
 
-header{
+
+body > header{
 
   height: 400px;
   width: 100%;
@@ -10,8 +14,32 @@ header{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #6B8E23;
+  background-color: #ffa114;
 background-image: url("https://www.transparenttextures.com/patterns/felt.png");
   /* background-color: #FF7F50; */
+  
+ 
 }
+@media screen and (min-width:768px) {
+  body > header {
+    margin-top: 180px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 100px;
+ display: flex;
+flex-direction: column;
+}
+}
+
+@media screen and (min-width:768px) {
+  .container {
+    margin-top: 180px;
+    margin-right: 100px;
+  }
+  }
+  @media screen and (min-width:768px) {
+    .container {
+width: 500000%;
+    }
+  }
 
