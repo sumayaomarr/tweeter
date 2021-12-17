@@ -27,3 +27,11 @@ padding-left: 80px;
 color: red;
 }
 
+@media screen and (max-width:768px) {
+
+  nav{
+    background-color: #ffa114;
+    background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+
+  }
+}

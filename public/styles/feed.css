@@ -1,0 +1,55 @@
+
+
+
+
+/* article.tweets targets class in the article that is tweets*/
+
+article.tweet {
+margin: auto;
+
+border: 3px solid black;
+}
+/* hashtages target ids */
+
+#feed{
+  margin-top: 40px
+}
+
+article footer {
+border-top:3px solid black; 
+margin-left: 30px;
+margin-right: 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+article header {
+  margin-left: 30px;
+margin-right: 30px;
+display: flex;
+flex-direction: row;
+align-items: center;
+
+}
+
+/* username and handler */
+article header > p {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+
+}
+
+article.tweet:hover{
+box-shadow: 10px 10px grey
+}
+  
+article.tweet footer > div > i:hover{
+  color:blue
+
+}
+
+article.tweet >p {
+  margin-left: 40px;
+}

@@ -18,3 +18,10 @@ border-bottom: 5px solid black;
   color:white;
   background-color:blue;
 }
+
+
+
+.error-message{
+  padding: 5px 0;
+  color: red;
+}
