@@ -17,7 +17,7 @@ html {
 body {
   font-family: Source-Sans-Pro;
   color: #a19b8b;
-  background-color: #eceff4;
+  background-color: white;
   font-size: 24px;
 }
 
@@ -38,3 +38,18 @@ body {
    justify-content: center;
   
  }
+
+
+ 
+ @media screen and (min-width:768px) {
+   body {
+  display: flex;
+flex-direction: row;
+}
+.container {
+  margin-top: 120px;
+  display: flex;
+}
+
+
+}
