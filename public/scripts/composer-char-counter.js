@@ -1,7 +1,7 @@
 console.log("loading files")
 
 $(document).ready(function () {
-  // --- our code goes here ---
+  
   $("#tweet-text").on("keyup", function () {
     const textvalue = $(this).val()
     const textLength = textvalue.length

@@ -47,41 +47,34 @@ $(document).ready(function () {
   }
 
 
-
-
-
   const createTweetElement = function (tweet) {
-    let name = tweet.user.name
-    let avatars = tweet.user.avatars
-    let handle = tweet.user.handle
-    let content = tweet.content.text
-    let timestamp = timeago.format(tweet.created_at);
+    const {user, content, created_at} = tweet
+    let timestamp = timeago.format(created_at);
     let $tweet = `
-  <article class="tweet">
-  <header> 
-      <img src=${avatars}></img>
-    <p> ${name} </p>
-    <p> ${handle} </p>
-  
-  </header>
-  
-  <p class="tweet-text">${escape(content)}</p>
-  
-  
-  <footer> 
-    <p>${timestamp}</p>
-  
-    <div class='icons'>
-    <i class="fas fa-flag"></i>
-    <i class="fas fa-retweet"></i>
-    <i class="fas fa-heart"></i>
-  
-  </div>
-  
-  
-  </footer>
-  </article>
-   `
+
+      <article class="tweet">
+          <header> 
+              <div>
+                <img src=${user.avatars}/>
+                <p> ${user.name} </p>
+              </div>
+
+              <p> ${user.handle} </p>
+          </header>
+          
+          <p class="tweet-text">${escape(content.text)}</p>
+
+          <footer> 
+            <p>${timestamp}</p>
+          
+            <div class="icons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+      </article>
+          `
     return $tweet;
   }
 
@@ -112,10 +105,11 @@ $(document).ready(function () {
       $.ajax({
         url: '/tweets',
         method: 'POST',
-        data :  { text: $("#tweet-text").val()},
+        data: data,
         success: function (data) {
           console.log("successfully sent tweet to server")
           $('.error-message').html('');
+          $('#feed').html('');
           $("#tweet-text").val('');
           loadTweets();
         },

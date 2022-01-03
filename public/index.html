@@ -32,7 +32,9 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -45,49 +47,44 @@
     <span>tweeter</span>
     <div>
       <b>Write</b> a new tweet
-    <div><i class="fas fa-angle-double-down"></i></div>
+      <div><i class="fas fa-angle-double-down"></i></div>
     </div>
   </nav>
 
   <header class="left">
     <div>
-        <img src="/images/profile-hex.png"> 
+      <img src="/images/profile-hex.png">
     </div>
     <br>
     <div>
-        <h2 class="name">SUMAYA</h2>
+      <h2 class="name">SUMAYA</h2>
     </div>
-</header>
+  </header>
 
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      
+
       <form action="/tweets" method="post" id="tweet-form">
-      
+
         <!-- <label for="tweet-text">What are you humming about?</label> -->
-       <div class= "tweet-box"><textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea></div>
-        <div class= "character-count">
-          <button class ="tweet-button" type="submit">Tweet</button>
+        <div class="tweet-box">
+          <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
+        </div>
+
+        <div class="character-count">
+          <button class="tweet-button" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
-        <div class= "error-message"></div>
+
+        <div class="error-message"></div>
       </form>
-    </section>
 
-<section id="feed"> 
-<!--   
-  <script>
-    $("body").empty();
-  </script>
-  -->
+      </section>
+      <section id="feed">
+      </section>
 
-</section>
-
-
-
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>

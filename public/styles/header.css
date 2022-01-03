@@ -27,9 +27,9 @@ background-image: url("https://www.transparenttextures.com/patterns/felt.png");
     margin-left: 20px;
     margin-right: 100px;
  display: flex;
-flex-direction: column;
-}
-}
+ flex-direction: column;
+ }
+};
 
 @media screen and (min-width:768px) {
   .container {
