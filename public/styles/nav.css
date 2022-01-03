@@ -16,7 +16,7 @@ nav{
   padding-top: 45px;
   display: flex;
   justify-content: space-between 
-};
+}
 
 .fa-angle-double-down{
 width: 100%;
@@ -24,7 +24,7 @@ display: flex;
 justify-content: center;
 padding-left: 80px;
 color: red;
-};
+}
 
 @media screen and (max-width:768px) {
 
@@ -33,4 +33,4 @@ color: red;
     background-image: url("https://www.transparenttextures.com/patterns/felt.png");
 
   }
-};
+}

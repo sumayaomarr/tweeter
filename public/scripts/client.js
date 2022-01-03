@@ -83,7 +83,8 @@ $(document).ready(function () {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  };
+  }
+  
   $("#tweet-form").submit(function (event) {
     // prevents page from refreshing
     event.preventDefault();
@@ -134,9 +135,6 @@ $(document).ready(function () {
     })
   }
   loadTweets()
-
-
-
 
 });
 
