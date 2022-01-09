@@ -7,7 +7,6 @@
 
 // A $( document ).ready() block.
 $(document).ready(function () {
-  console.log("ready!");
 
   const data = [
     {
@@ -108,14 +107,13 @@ $(document).ready(function () {
         method: 'POST',
         data: data,
         success: function (data) {
-          console.log("successfully sent tweet to server")
           $('.error-message').html('');
           $('#feed').html('');
           $("#tweet-text").val('');
+          $(".counter").text(140)
           loadTweets();
         },
         error: function (err) {
-          console.log("failed to send tweet to server")
         }
       })
     }
@@ -126,11 +124,9 @@ $(document).ready(function () {
       url: '/tweets',
       method: 'GET',
       success: function (data) {
-        console.log("data recieved from server", data);
         renderTweets(data);
       },
       error: function (err) {
-        console.log("failed to recieve data from server", err);
       }
     })
   }

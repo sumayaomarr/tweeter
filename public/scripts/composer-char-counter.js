@@ -1,4 +1,3 @@
-console.log("loading files")
 
 $(document).ready(function () {
   
@@ -11,7 +10,7 @@ $(document).ready(function () {
 
     } else {
       $(".counter").css("color", "black");
-      console.log('black') }
+     }
     $(".counter").text(remainingtext)
   });
 });
